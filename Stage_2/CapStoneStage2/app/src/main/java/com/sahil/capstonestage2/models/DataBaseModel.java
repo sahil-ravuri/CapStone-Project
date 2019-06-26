@@ -1,11 +1,9 @@
 package com.sahil.capstonestage2.models;
 
-import com.google.firebase.database.DatabaseReference;
-
 public class DataBaseModel {
     private String mUrl, mImg, mTitle, mDate, mSource, mAuthor;
     private String id;
-    private DatabaseReference reference;
+
 
     public DataBaseModel() {
     }

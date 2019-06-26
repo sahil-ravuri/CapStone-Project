@@ -52,7 +52,7 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
     private String mSource;
     private String id;
     Button bookmark;
-    int i = 0;
+    public int i = 0;
 
 
     @SuppressLint({"CheckResult", "SetTextI18n"})
@@ -67,7 +67,6 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         DatabaseReference mDatabaseReference;
-        final DatabaseReference reference;
 
         mDatabaseReference = mDatabase.getReference();
 
@@ -136,7 +135,7 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
            @Override
            public void onClick(View view) {
                FirebaseDatabase database = FirebaseDatabase.getInstance();
-               DatabaseReference reference = database.getReference("bookmarks");
+               DatabaseReference reference = database.getReference("bookmarks").push();
                DataBaseModel model = new DataBaseModel(id,mUrl, mImg, mTitle, mDate, mSource, mAuthor);
                reference.setValue(model);
            }

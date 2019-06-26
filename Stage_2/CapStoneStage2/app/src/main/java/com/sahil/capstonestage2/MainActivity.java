@@ -17,7 +17,6 @@ import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityOptionsCompat;
@@ -27,29 +26,23 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.sahil.capstonestage2.Adapter.Adapter;
+import com.sahil.capstonestage2.Helper.DatabaseHelper;
 import com.sahil.capstonestage2.Utilities.Utils;
 import com.sahil.capstonestage2.api.ApiClient;
 import com.sahil.capstonestage2.api.ApiInterface;
 import com.sahil.capstonestage2.models.Article;
 import com.sahil.capstonestage2.models.DataBaseModel;
 import com.sahil.capstonestage2.models.News;
-import com.sahil.capstonestage2.models.Source;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -57,7 +50,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayout.OnRefreshListener{
 
     private static final String API_KEY = "d9057f3174df469783a47cc416f4d3a5";
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView,bookrecyclerview;
     private List<Article> articles = new ArrayList<>();
     private Adapter adapter;
     private TextView topHeadline;
@@ -70,12 +63,11 @@ public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayo
     private DatabaseReference mDatabaseReference;
     private FirebaseDatabase firebaseDatabase;
     private String id;
-
+    int i=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        id=mDatabaseReference.getKey();
         topHeadline = findViewById(R.id.topheadelines);
         recyclerView = findViewById(R.id.recyclerView);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
@@ -138,7 +130,6 @@ public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayo
                         recyclerView.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
 
-                        initListener();
 
                         topHeadline.setVisibility(View.VISIBLE);
                         swipeRefreshLayout.setRefreshing(false);
@@ -173,41 +164,6 @@ public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayo
                 swipeRefreshLayout.setRefreshing(false);
                 showErrorMessage(
                         R.drawable.oops,"Oops..","Network failure, Please Try Again\n"+t.toString());
-            }
-        });
-
-    }
-
-
-
-    private void initListener(){
-
-        adapter.setOnItemClickListener(new Adapter.OnItemClickListener() {
-            @SuppressWarnings("unchecked")
-            @Override
-            public void onItemClick(View view, int position) {
-                ImageView imageView = view.findViewById(R.id.img);
-                Intent intent = new Intent(MainActivity.this, NewsDetailActivity.class);
-
-                Article article = articles.get(position);
-                intent.putExtra("url", article.getUrl());
-                intent.putExtra("title", article.getTitle());
-                intent.putExtra("img",  article.getUrlToImage());
-                intent.putExtra("date",  article.getPublishedAt());
-                intent.putExtra("source",  article.getSource().getName());
-                intent.putExtra("author",  article.getAuthor());
-
-                Pair<View, String> pair = Pair.create((View)imageView, ViewCompat.getTransitionName(imageView));
-                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(MainActivity.this,pair);
-
-
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                    Log.d("detail",article.getUrl());
-                    startActivity(intent, optionsCompat.toBundle());
-                }else {
-                    startActivity(intent);
-                }
-
             }
         });
 
@@ -298,22 +254,33 @@ public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayo
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         if (itemId==R.id.id_settings){
-            /*DatabaseReference databaseReference = (DatabaseReference) firebaseDatabase.getReference(String.valueOf(DataBaseModel.class));
-            databaseReference.addValueEventListener(
-                    new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            DataBaseModel db = dataSnapshot.getValue(DataBaseModel.class);
-                            Log.i("my fav data", String.valueOf(db));
-                        }
+                new DatabaseHelper(this).readData(new DatabaseHelper.DataStatus() {
+                    @Override
+                    public void dataIsLoaded(List<DataBaseModel> articles, List<String> keys) {
+                       // new BookMark().bookmark(bookrecyclerview, MainActivity.this, articles, keys);
+                        adapter = new Adapter(MainActivity.this,articles ,1);
+                        recyclerView.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
 
-                        }
+                    @Override
+                    public void DataInserted() {
 
-                    });*/
-        }
+                    }
+
+                    @Override
+                    public void DataUpdated() {
+
+                    }
+
+                    @Override
+                    public void DataDeleted() {
+
+                    }
+                });
+            }
+
         return true;
     }
 }

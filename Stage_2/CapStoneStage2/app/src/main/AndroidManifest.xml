@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.sahil.capstonestage2">
+    package="com.sahil.capstonestage2"
+    tools:ignore="MissingVersion">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,7 +15,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning,RtlEnabled,UnusedAttribute">
 
         <receiver
             android:name=".Widget.NewsAppWidget"
@@ -45,12 +46,10 @@
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true" />
         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-
-        <activity android:name=".MainActivity" />
+            android:name="com.google.android.gms.version"/>
         <activity android:name=".NewsDetailActivity" />
-        <activity android:name=".SignIn.BaseActivity" />
+        <activity android:name=".SignIn.BaseActivity"
+            tools:ignore="InnerclassSeparator" />
     </application>
 
 </manifest>
