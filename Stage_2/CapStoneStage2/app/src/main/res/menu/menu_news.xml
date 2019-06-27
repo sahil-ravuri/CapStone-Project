@@ -4,12 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/share"
-        android:title="Share"
+        android:title="@string/share"
         android:icon="@drawable/ic_share"
         app:showAsAction="always"
-        tools:ignore="HardcodedText" />
+        tools:ignore="AlwaysShowAction,HardcodedText" />
 
     <item android:id="@+id/view_web"
-        android:title="Open with browser"
+        android:title="@string/open_with_browser"
         app:showAsAction="never" />
 </menu>

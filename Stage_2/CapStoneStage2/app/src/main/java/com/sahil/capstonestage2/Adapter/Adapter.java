@@ -4,8 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +13,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -28,7 +23,6 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
-import com.sahil.capstonestage2.MainActivity;
 import com.sahil.capstonestage2.NewsDetailActivity;
 import com.sahil.capstonestage2.R;
 import com.sahil.capstonestage2.Utilities.Utils;
@@ -42,8 +36,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
 
     private  List<Article> articles=null;
     private  List<DataBaseModel> dataBaseModels=null;
-    private  Context context=null;
-    int i=0;
+    private  Context context;
+    private int i=0;
     //private OnItemClickListener onItemClickListener;
 
 
@@ -79,7 +73,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         requestOptions.centerCrop();
         if(i==1)
         {
-            DataBaseModel models=null;
+            DataBaseModel models;
             if(dataBaseModels!=null) {
                 models = dataBaseModels.get(position);
                 Glide.with(context).load(models.getmImg()).apply(requestOptions)
@@ -107,7 +101,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
             }
         }
         else {
-            Article model=null;
+            Article model;
             if(articles!=null) {
                 model = articles.get(position);
                 Glide.with(context).load(model.getUrlToImage()).apply(requestOptions)

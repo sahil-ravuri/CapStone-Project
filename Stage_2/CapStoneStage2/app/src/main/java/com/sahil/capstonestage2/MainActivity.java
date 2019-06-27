@@ -2,11 +2,8 @@ package com.sahil.capstonestage2;
 
 import android.app.SearchManager;
 import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.PersistableBundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,9 +16,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityOptionsCompat;
-import androidx.core.util.Pair;
-import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,8 +24,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.sahil.capstonestage2.Adapter.Adapter;
 import com.sahil.capstonestage2.Helper.DatabaseHelper;
 import com.sahil.capstonestage2.Utilities.Utils;
@@ -47,10 +39,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+
 public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayout.OnRefreshListener{
 
     private static final String API_KEY = "d9057f3174df469783a47cc416f4d3a5";
-    private RecyclerView recyclerView,bookrecyclerview;
+    private RecyclerView recyclerView;
     private List<Article> articles = new ArrayList<>();
     private Adapter adapter;
     private TextView topHeadline;
@@ -59,11 +52,7 @@ public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayo
     private ImageView errorImage;
     private TextView errorTitle, errorMessage;
     private Button btnretry;
-    public AdView mAdView;
-    private DatabaseReference mDatabaseReference;
-    private FirebaseDatabase firebaseDatabase;
-    private String id;
-    int i=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,7 +62,8 @@ public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayo
         swipeRefreshLayout = findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
-        mAdView = findViewById(R.id.adView);
+        //noinspection UnusedAssignment
+        AdView mAdView = findViewById(R.id.adView);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -261,21 +251,6 @@ public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayo
                         adapter = new Adapter(MainActivity.this,articles ,1);
                         recyclerView.setAdapter(adapter);
                         adapter.notifyDataSetChanged();
-
-                    }
-
-                    @Override
-                    public void DataInserted() {
-
-                    }
-
-                    @Override
-                    public void DataUpdated() {
-
-                    }
-
-                    @Override
-                    public void DataDeleted() {
 
                     }
                 });

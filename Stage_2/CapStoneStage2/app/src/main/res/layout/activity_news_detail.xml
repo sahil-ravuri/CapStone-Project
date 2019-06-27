@@ -46,7 +46,6 @@
                 android:text="@string/bookmark" />
 
             <RelativeLayout
-                android:id="@+id/headerContent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerInParent="true"
@@ -62,7 +61,6 @@
                     android:src="@drawable/top_shadow" />
 
                 <ImageView
-                    android:id="@+id/img2"
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:layout_alignBottom="@id/img"
@@ -202,7 +200,6 @@
 
                     <ProgressBar
                         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                        android:id="@+id/progress_bar"
                         android:layout_marginTop="50dp"
                         android:layout_marginBottom="70dp"
                         android:layout_width="match_parent"

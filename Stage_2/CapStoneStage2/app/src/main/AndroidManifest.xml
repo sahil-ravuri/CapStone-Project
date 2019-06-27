@@ -38,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".MainActivity" />
         <meta-data
             android:name="com.google.android.gms.ads.@string/banner_ad_unit_id"
             android:value="@string/banner_ad_unit_id" />

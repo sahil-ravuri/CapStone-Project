@@ -13,7 +13,8 @@
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
         app:cardElevation="@dimen/cardview_default_elevation"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="10dp"
+        tools:ignore="PrivateResource">
 
         <RelativeLayout
             android:background="?android:attr/selectableItemBackground"
@@ -29,7 +30,6 @@
                 tools:ignore="ContentDescription,UnusedAttribute" />
 
             <ImageView
-                android:id="@+id/shadow_bottom"
                 android:src="@drawable/bottom_shadow"
                 android:layout_alignBottom="@id/img"
                 android:layout_width="match_parent"

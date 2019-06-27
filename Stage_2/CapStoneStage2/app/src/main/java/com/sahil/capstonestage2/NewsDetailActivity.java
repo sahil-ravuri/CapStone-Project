@@ -39,6 +39,7 @@ import com.sahil.capstonestage2.models.DataBaseModel;
 
 import java.util.Objects;
 
+@SuppressWarnings({"unused", "SameReturnValue"})
 public class NewsDetailActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener{
 
     private boolean isHideToolbarView = false;
@@ -51,7 +52,6 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
     private String mTitle;
     private String mSource;
     private String id;
-    Button bookmark;
     public int i = 0;
 
 
@@ -72,7 +72,7 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
 
         Objects.requireNonNull(getSupportActionBar()).setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        bookmark=findViewById(R.id.bookMark);
+        Button bookmark = findViewById(R.id.bookMark);
         final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle("");
 

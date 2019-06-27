@@ -1,7 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="EntryPointsManager">
+    <entry_points version="2.0">
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity i" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.models.Article author" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity bookmark" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.MainActivity bookrecyclerview" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.Helper.DatabaseHelper check" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.Helper.DatabaseHelper context" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity date_behavior" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.models.Article description" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.models.Article id" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity id" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity isHideToolbarView" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity mAuthor" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity mDate" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity mImg" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity mSource" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity mTitle" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity mUrl" />
+      <entry_point TYPE="method" FQNAME="com.sahil.capstonestage2.NewsDetailActivity$1 void onClick(android.view.View view)" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.models.Article publishedAt" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.models.Article source" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.models.Article title" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.NewsDetailActivity titleAppbar" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.models.Article url" />
+      <entry_point TYPE="field" FQNAME="com.sahil.capstonestage2.models.Article urlToImage" />
+      <entry_point TYPE="method" FQNAME="com.sahil.capstonestage2.MainActivity$5 void dataIsLoaded(java.util.List&lt;com.sahil.capstonestage2.models.DataBaseModel&gt; articles, java.util.List&lt;java.lang.String&gt; keys)" />
+    </entry_points>
     <pattern value="com.sahil.capstonestage2.BaseActivity" method="hideKeyboard" />
+    <pattern value="com.sahil.capstonestage2.ExampleUnitTest" method="addition_isCorrect" />
+    <pattern value="com.sahil.capstonestage2.models.Article" />
+    <pattern value="com.sahil.capstonestage2.SignIn.BaseActivity" />
+    <pattern value="com.sahil.capstonestage2.Helper.DatabaseHelper" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" />
+    <pattern value="com.sahil.capstonestage2.Helper.DatabaseHelper.DataStatus" method="dataIsLoaded" />
+    <pattern value="com.sahil.capstonestage2.Helper.DatabaseHelper.DataStatus" />
+    <pattern value="com.sahil.capstonestage2.ExampleInstrumentedTest" />
+    <pattern value="com.sahil.capstonestage2.ExampleUnitTest" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="getAuthor" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="getDescription" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="getId" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" method="getId" />
+    <pattern value="com.sahil.capstonestage2.models.Source" method="getId" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="getPublishedAt" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="getSource" />
+    <pattern value="com.sahil.capstonestage2.models.News" method="getStatus" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="getTitle" />
+    <pattern value="com.sahil.capstonestage2.models.News" method="getTotalResult" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="getUrl" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="getUrlToImage" />
+    <pattern value="com.sahil.capstonestage2.SignIn.GoogleSignInActivity" />
+    <pattern value="com.sahil.capstonestage2.SignIn.BaseActivity" method="hideKeyboard" />
+    <pattern value="com.sahil.capstonestage2.MainActivity" />
+    <pattern value="com.sahil.capstonestage2.Widget.NewsAppWidget" />
+    <pattern value="com.sahil.capstonestage2.NewsDetailActivity" />
+    <pattern value="com.sahil.capstonestage2.NewsDetailActivity" method="initWebView" />
+    <pattern value="com.sahil.capstonestage2.models.News" />
+    <pattern value="com.sahil.capstonestage2.NewsDetailActivity" method="onBackPressed" />
+    <pattern value="com.sahil.capstonestage2.NewsDetailActivity" method="onCreate" />
+    <pattern value="com.sahil.capstonestage2.NewsDetailActivity" method="onCreateOptionsMenu" />
+    <pattern value="com.sahil.capstonestage2.NewsDetailActivity" method="onOffsetChanged" />
+    <pattern value="com.sahil.capstonestage2.NewsDetailActivity" method="onOptionsItemSelected" />
+    <pattern value="com.sahil.capstonestage2.NewsDetailActivity" method="onSupportNavigateUp" />
+    <pattern value="com.sahil.capstonestage2.models.News" method="setArticle" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="setAuthor" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="setDescription" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="setId" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" method="setId" />
+    <pattern value="com.sahil.capstonestage2.models.Source" method="setId" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" method="setmAuthor" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" method="setmDate" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" method="setmImg" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" method="setmSource" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" method="setmTitle" />
+    <pattern value="com.sahil.capstonestage2.models.DataBaseModel" method="setmUrl" />
+    <pattern value="com.sahil.capstonestage2.models.Source" method="setName" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="setPublishedAt" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="setSource" />
+    <pattern value="com.sahil.capstonestage2.models.News" method="setStatus" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="setTitle" />
+    <pattern value="com.sahil.capstonestage2.models.News" method="setTotalResult" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="setUrl" />
+    <pattern value="com.sahil.capstonestage2.models.Article" method="setUrlToImage" />
+    <pattern value="com.sahil.capstonestage2.models.Source" />
+    <pattern value="com.sahil.capstonestage2.ExampleInstrumentedTest" method="useAppContext" />
+    <pattern value="com.sahil.capstonestage2.MainActivity" method="onCreateOptionsMenu" />
+    <pattern value="com.sahil.capstonestage2.MainActivity" method="onCreate" />
+    <pattern value="com.sahil.capstonestage2.MainActivity" method="onOptionsItemSelected" />
+    <pattern value="com.sahil.capstonestage2.MainActivity" method="onRefresh" />
+    <pattern value="com.sahil.capstonestage2.MainActivity" method="onSaveInstanceState" />
+    <pattern value="com.sahil.capstonestage2.Adapter.Adapter" />
+    <pattern value="com.sahil.capstonestage2.Adapter.Adapter" method="getItemCount" />
+    <pattern value="com.sahil.capstonestage2.Adapter.Adapter" method="onBindViewHolder" />
+    <pattern value="com.sahil.capstonestage2.Adapter.Adapter" method="onCreateViewHolder" />
+    <pattern value="com.sahil.capstonestage2.Widget.NewsAppWidget" method="updateAppWidget" />
   </component>
   <component name="NullableNotNullManager">
     <option name="myDefaultNullable" value="androidx.annotation.Nullable" />

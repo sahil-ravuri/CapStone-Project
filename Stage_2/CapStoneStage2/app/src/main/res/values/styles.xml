@@ -7,10 +7,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
 
     <style name="MyAppBarLayoutTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
         <item name="colorControlHighlight">@color/colorAccent</item>
@@ -22,7 +18,6 @@
         <item name="android:layout_marginLeft">4dp</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
-    <style name="ThemeOverlay.MyLightEditText" parent="ThemeOverlay.AppCompat.Dark"/>
 
     <style name="ThemeOverlay.MyTextDetail" parent="AppTheme">
         <item name="android:layout_width">wrap_content</item>

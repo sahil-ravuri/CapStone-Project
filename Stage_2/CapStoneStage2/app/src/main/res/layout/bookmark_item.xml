@@ -30,7 +30,6 @@
                 tools:ignore="ContentDescription,UnusedAttribute" />
 
             <ImageView
-                android:id="@+id/book_shadow_bottom"
                 android:src="@drawable/bottom_shadow"
                 android:layout_alignBottom="@id/bookimg"
                 android:layout_width="match_parent"
@@ -38,7 +37,6 @@
                 tools:ignore="ContentDescription" />
 
             <ProgressBar
-                android:id="@+id/book_prograss_load_photo"
                 style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Small"
                 android:layout_marginTop="70dp"
                 android:layout_width="match_parent"
@@ -64,7 +62,6 @@
                 tools:ignore="NotSibling,RtlHardcoded,UnknownIdInLayout" />
 
             <FrameLayout
-                android:id="@+id/book_layoutDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bookimg"

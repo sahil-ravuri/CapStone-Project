@@ -26,6 +26,7 @@ import com.sahil.capstonestage2.MainActivity;
 import com.sahil.capstonestage2.R;
 
 
+@SuppressWarnings("unused")
 public class GoogleSignInActivity extends BaseActivity implements
         View.OnClickListener {
 
