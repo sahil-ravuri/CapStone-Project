@@ -30,8 +30,7 @@
         </receiver>
 
         <activity
-            android:name=".SignIn.GoogleSignInActivity"
-            tools:ignore="InnerclassSeparator">
+            android:name=".SignIn.GoogleSignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

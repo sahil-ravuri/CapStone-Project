@@ -11,15 +11,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
@@ -32,9 +35,11 @@ import com.sahil.capstonestage2.api.ApiInterface;
 import com.sahil.capstonestage2.models.Article;
 import com.sahil.capstonestage2.models.DataBaseModel;
 import com.sahil.capstonestage2.models.News;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -174,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements  SwipeRefreshLayo
         inflater.inflate(R.menu.menu_main, menu);
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        final SearchView searchView = (SearchView) menu.findItem(R.id.id_search).getActionView();
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.id_search));
         MenuItem searchMenuItem = menu.findItem(R.id.id_search);
 
         assert searchManager != null;

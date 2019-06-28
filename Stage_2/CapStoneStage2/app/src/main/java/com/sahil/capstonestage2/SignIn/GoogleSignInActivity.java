@@ -25,8 +25,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.sahil.capstonestage2.MainActivity;
 import com.sahil.capstonestage2.R;
 
-
-@SuppressWarnings("unused")
 public class GoogleSignInActivity extends BaseActivity implements
         View.OnClickListener {
 
@@ -97,7 +95,7 @@ public class GoogleSignInActivity extends BaseActivity implements
 
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-                Log.w(TAG, "Google sign in failed", e);
+               // Log.w(TAG, "Google sign in failed", e);
                 // [START_EXCLUDE]
                 updateUI(null);
                 // [END_EXCLUDE]
@@ -120,7 +118,7 @@ public class GoogleSignInActivity extends BaseActivity implements
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithCredential:success");
+                           // Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
                         } else {

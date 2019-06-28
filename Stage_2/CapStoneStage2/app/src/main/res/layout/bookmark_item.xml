@@ -17,7 +17,7 @@
         tools:ignore="PrivateResource">
 
         <RelativeLayout
-            android:background="?android:attr/selectableItemBackground"
+            android:background="?attr/selectableItemBackground"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -30,7 +30,7 @@
                 tools:ignore="ContentDescription,UnusedAttribute" />
 
             <ImageView
-                android:src="@drawable/bottom_shadow"
+                app:srcCompat="@drawable/bottom_shadow"
                 android:layout_alignBottom="@id/bookimg"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
@@ -73,7 +73,7 @@
                 tools:ignore="RtlHardcoded">
 
                 <ImageView
-                    android:src="@drawable/ic_date"
+                    app:srcCompat="@drawable/ic_date"
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:layout_marginLeft="5dp"

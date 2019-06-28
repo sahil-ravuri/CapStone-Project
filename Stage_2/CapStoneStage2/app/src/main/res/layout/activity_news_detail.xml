@@ -38,12 +38,7 @@
                 tools:ignore="UnusedAttribute"
                 android:contentDescription="@string/backdropimg" />
 
-            <Button
-                android:id="@+id/bookMark"
-                style="@style/Widget.AppCompat.Button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/bookmark" />
+
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -58,7 +53,7 @@
                     android:layout_height="70dp"
                     android:contentDescription="@string/top_shodow"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/top_shadow" />
+                    app:srcCompat="@drawable/top_shadow" />
 
                 <ImageView
                     android:layout_width="match_parent"
@@ -67,7 +62,7 @@
                     android:layout_alignParentBottom="true"
                     android:contentDescription="@string/img"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/bottom_shadow"
+                    app:srcCompat="@drawable/bottom_shadow"
                     tools:ignore="NotSibling" />
 
             </RelativeLayout>
@@ -83,6 +78,13 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 tools:targetApi="lollipop">
+
+                <Button
+                    android:id="@+id/bookMark"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bookmark" />
 
                 <LinearLayout
                     android:id="@+id/title_appbar"
@@ -240,7 +242,7 @@
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints,RtlHardcoded,UnusedAttribute">
         <ImageView
-            android:src="@drawable/ic_date"
+            app:srcCompat="@drawable/ic_date"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginLeft="5dp"

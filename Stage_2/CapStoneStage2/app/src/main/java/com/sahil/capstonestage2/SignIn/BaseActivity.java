@@ -41,12 +41,11 @@ public class BaseActivity extends AppCompatActivity {
         }
     }
 
-// --Commented out by Inspection START (27-06-2019 06:40):
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//        hideProgressDialog();
-//    }
-// --Commented out by Inspection STOP (27-06-2019 06:40)
+    @Override
+    public void onStop() {
+        super.onStop();
+        hideProgressDialog();
+    }
+
 
 }
